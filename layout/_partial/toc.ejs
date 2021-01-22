@@ -1,7 +1,8 @@
 <!-- Table of Contents -->
 <div id="sidebar-toc">
   <!-- TOC  -->
-  <% if (typeof depth === 'undefined') { depth = 2 } %>
+  <!-- depth: controlls the depth of toc -->
+  <% if (typeof depth === 'undefined') { depth = 3 } %>
   <% if (toc(page.content) != ""){ %>
   <%- toc(page.content, { "class": "toc-nav", "list_number": false, "max_depth": depth }) %>
   <% } %>
@@ -39,6 +40,7 @@
         link.classList.remove('gkt-sidebar-active');
       })
       activeLink(h2);
+      // activeLink(h3);
     })
   })();
 </script>
