@@ -16,6 +16,9 @@
             url && getDom('#gitalk-container button').addEventListener('click', function (e) { window.open(url)})
             url || (getDom('#gitalk-container').style.display = 'none')
         }
+        postname = location.pathname.replace(/^(\s|\/)+|(\s|\/)+$/g, '');
+        // postname = postname.substring(0, postname.lastIndexOf("."));
+        issue_title = (document.title + " | " + postname).replaceAll('|', '-');
         const gitalk = new Gitalk({
             clientID: '<%- config.gitalk.client_id %>',
             clientSecret: '<%- config.gitalk.client_secret %>',
@@ -23,7 +26,8 @@
             repo: '<%- config.gitalk.repo %>',
             owner: '<%- config.gitalk.owner %>',
             admin: ['<%- config.gitalk.owner %>'],
-            id: window.location.pathname,
+            id: postname,
+            title: issue_title,
             distractionFreeMode: false
         });
         fetch("https://api.github.com/user").then(function(resp){
