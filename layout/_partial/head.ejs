@@ -14,7 +14,7 @@
   <meta name="keywords" content="<%= [config.keyword, tags_str, keywords_str].join(',').replace(',,', ',') %>">
   <!-- page.description has higher priority -->
   <meta name="description" content="<%= page.description || config.description %>">
-  <link rel="shortcut icon" href="<%= config.root %><%= config.header_icon %>">
+  <link rel="shortcut icon" href="<%= config.header_icon %>">
   <title>
     <% if (page.title) {  var parts = [page.title, page.seo_title, config.seo_title || config.title] %>
     <%= parts.filter(item => item).join(' | ') %>
