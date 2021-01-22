@@ -48,7 +48,7 @@
         height: 25px;
     }
 </style>
-
+<!-- 文章、专题、标签统计信息 -->
 <div class="gkt-summary">
     <nav>
         <a href="<%= config.root %>" class="col-xs-4">
@@ -65,7 +65,7 @@
     <% if(config.related_links) { %>
     <div class="link-list">
         <% config.related_links.forEach(function(item){ %>
-        <a href="<%= item.link %>"><img src="<%= config.root %><%= item.img %>" /></a>
+        <a href="<%= item.link %>"><img src="<%= item.img %>" /></a>
         <% }) %>
     </div>
     <% } %>
